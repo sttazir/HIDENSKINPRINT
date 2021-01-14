@@ -1,0 +1,61 @@
+{
+    "DEV" : {
+        "SERVER" : {
+            "Port" : 8080
+        },
+        "DB" : {
+            "User" : "DB_A389CB_DISHAAIRWAYSENT_admin",
+            "Password" : "obrigado0aB",
+            "Server" : "sql6009.site4now.net",
+            "Database" : "DB_A389CB_HNS"
+        },
+        "FS" : {
+            "InputTemplate" : "../resources/input.docx",
+            "OutputDocx" : "../generatedfiles/output.docx",
+            "OutputPdf" : "../generatedfiles/output.pdf",
+
+            "InputTemplate1" : "../resources/CourierStatement2.docx",
+            "OutputDocx1" : "../generatedfiles/CourierStatement2.docx",
+            "OutputPdf1" : "../generatedfiles/CourierStatement2.pdf",
+
+            "InputTemplatestockin" : "../resources/StockinStatement.docx",
+            "OutputDocxstockin" : "../generatedfiles/StockinStatement.docx",
+            "OutputPdfstockin" : "../generatedfiles/StockinStatement.pdf",
+
+        
+            "InputTemplatestockout" : "../resources/StockoutStatement.docx",
+            "OutputDocxstockout" : "../generatedfiles/StockoutStatement.docx",
+            "OutputPdfstockout" : "../generatedfiles/StockoutStatement.pdf",
+
+
+            "InputTemplatestock" : "../resources/StockStatement.docx",
+            "OutputDocxstock" : "../generatedfiles/StockStatement.docx",
+            "OutputPdfstock" : "../generatedfiles/StockStatement.pdf",
+
+
+            "InputTemplateproduct" : "../resources/ProductStatement.docx",
+            "OutputDocxproduct" : "../generatedfiles/ProductStatement.docx",
+            "OutputPdfproduct" : "../generatedfiles/ProductStatement.pdf"
+
+
+        },
+        "ROUTE" : {
+            "FetchData" : "/getsqldata",
+            "GetWordDoc" : "/getworddoc",
+            "GetPdfDoc" : "/getpdfdoc",
+            
+            "GetWordDocstockin" : "/getworddocstockin",
+            "GetPdfDocstockin" : "/getpdfdocstockin",
+            "GetWordDocstockout" : "/getworddocstockout",
+            "GetPdfDocstockout" : "/getpdfdocstockout",
+
+            "GetWordDocstock" : "/getworddocstock",
+            "GetPdfDocstock" : "/getpdfdocstock",
+            "GetWordDocproduct" : "/getworddocproduct",
+            "GetPdfDocproduct" : "/getpdfdocproduct",
+            
+            "TestWordDoc" : "/testworddoc",
+            "TestPdfDoc" : "/testpdfdoc"
+        }
+    }
+}
