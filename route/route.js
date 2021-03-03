@@ -6,16 +6,17 @@ var conf = require('../config/config.json').DEV;
 var pdf = require('../server/generate-pdf');
 var pdf1 = require('../server/generate-pdfstockin');
 var pdf2 = require('../server/generate-pdfstockout');
-
 var pdf3 = require('../server/generate-pdfstock');
 var pdf4 = require('../server/generate-pdfproduct');
+var pdf5 = require('../server/generate-pdfproductreq');
+
 
 var doc = require('../server/generate-doc');
 var doc1 = require('../server/generate-docstockin');
 var doc2 = require('../server/generate-docstockout');
-
 var doc3 = require('../server/generate-docstock');
 var doc4 = require('../server/generate-docproduct');
+var doc5 = require('../server/generate-docproductreq');
 
 // fetch data from sql
 
@@ -407,6 +408,57 @@ app.post(conf.ROUTE.GetPdfDocproduct, (req, res) => {
         res.status(400).send({ResponseStatus : "400 Bad Request. " + response});
     }
 });
+
+
+
+  //////// editing   word ///
+app.post(conf.ROUTE.GetWordDocproductreq, (req, res) => {
+    var response = validateRequest(req.body);
+    
+    console.log("request body"+ JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.params));
+    if(response === "Valid")
+    {
+        doc5.getworddocproductreq(req.body).then((buf) => {
+              //res.download(path.join(__dirname, conf.FS.OutputDocx1));
+             //res.send(path.join(__dirname, conf.FS.OutputDocx1));
+            res.send(buf);
+        }, (err) => {
+            res.send({status: err})
+        });
+
+
+    }
+    else
+    {
+        res.status(400).send({ResponseStatus : "400 Bad Request. " + response});
+    }
+});
+  //////// editing  pdf///
+app.post(conf.ROUTE.GetPdfDocproductreq, (req, res) => {
+    var response = validateRequest(req.body);
+    if(response === "Valid")
+    {
+
+        // pdf.getpdfdoc(req.body).then(() => {
+        //     res.download(path.join(__dirname, conf.FS.OutputPdf1));
+        // });
+
+        pdf5.getpdfdocproductreq(req.body).then((buf) => {
+            //res.download(path.join(__dirname, conf.FS.OutputDocx1));
+           //res.send(path.join(__dirname, conf.FS.OutputDocx1));
+          res.send(buf);
+      }, (err) => {
+          res.send({status: err})
+      });
+
+    }
+    else
+    {
+        res.status(400).send({ResponseStatus : "400 Bad Request. " + response});
+    }
+});
+
 
 
 

@@ -35,7 +35,12 @@
 
             "InputTemplateproduct" : "../resources/ProductStatement.docx",
             "OutputDocxproduct" : "../generatedfiles/ProductStatement.docx",
-            "OutputPdfproduct" : "../generatedfiles/ProductStatement.pdf"
+            "OutputPdfproduct" : "../generatedfiles/ProductStatement.pdf",
+
+              
+            "InputTemplatepreq" : "../resources/PurchaseReq.docx",
+            "OutputDocxpreq" : "../generatedfiles/PurchaseReq.docx",
+            "OutputPdfpreq" : "../generatedfiles/PurchaseReq.pdf"
 
 
         },
@@ -46,16 +51,23 @@
             
             "GetWordDocstockin" : "/getworddocstockin",
             "GetPdfDocstockin" : "/getpdfdocstockin",
+
             "GetWordDocstockout" : "/getworddocstockout",
             "GetPdfDocstockout" : "/getpdfdocstockout",
 
             "GetWordDocstock" : "/getworddocstock",
             "GetPdfDocstock" : "/getpdfdocstock",
+
             "GetWordDocproduct" : "/getworddocproduct",
             "GetPdfDocproduct" : "/getpdfdocproduct",
+
+            "GetWordDocproductreq" : "/getworddocproductreq",
+            "GetPdfDocproductreq" : "/getpdfdocproductreq",
+            
             
             "TestWordDoc" : "/testworddoc",
             "TestPdfDoc" : "/testpdfdoc"
+
         }
     }
 }
